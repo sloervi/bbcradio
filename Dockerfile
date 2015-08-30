@@ -8,7 +8,7 @@ LABEL Description="Create Docker Image for downloading BBC Radio Shows with get_
 RUN mkdir -p /usr/local/bin && cd /usr/local/bin && git clone git://git.infradead.org/get_iplayer.git
 
 # Get my scripts
-RUN cd /usr/local/bin && git clone https://github.com/sloervi/ubuntu-perl-music.git bbc
+RUN cd /usr/local/bin && git clone https://github.com/sloervi/bbcradio.git bbc
 
 # Create User and group
 RUN groupadd -r bbc && useradd -r -g bbc bbc
