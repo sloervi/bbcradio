@@ -1,5 +1,5 @@
 # Dockerfile sloervi/bbcradio
-FROM sloervi/ubuntu-perl-music:v2
+FROM sloervi/ubuntu-perl-music:v4
 MAINTAINER sloervi McMurphy <docker@sloervi.de>
 
 LABEL Description="Create Docker Image for downloading BBC Radio Shows with get_iplayer" Vendor="sloervi McMurphy" Version="1"
