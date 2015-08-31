@@ -294,7 +294,7 @@ else
 				#############################
 				# Sendung "aufnehmen"
 				#############################
-				my $rc = system("/usr/local/bin/get_iplayer/get_iplayer --quiet --force --isodate --subdir --output $outdir --tag-fulltitle --command 'id3tag -g 80' --get $id") unless $quiet;
+				my $rc = system("/usr/local/bin/get_iplayer/get_iplayer --quiet --force --isodate --subdir --output $outdir --tag-fulltitle --command '/usr/bin/id3tag -g 80' --get $id") unless $quiet;
 				DEBUG "Abschluss Aufnahme $id: $rc" unless $quiet;
 				#############################
 				# Detail- Infos in eine Sendungs- Datei schreiben
