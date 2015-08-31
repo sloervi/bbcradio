@@ -46,7 +46,7 @@ if($help)
 	exit;
 }
 
-my $logfile = "$senke/bbclog.txt";
+my $logfile = "$senke/bcclog.txt";
 
 Log::Log4perl->easy_init({ 
   file  => ">>$logfile", 
@@ -306,14 +306,7 @@ else
 				DEBUG "Abschluss Sendungsdatei $sendungsinfofile: $rc";
 
 				bearbeite($id, $sendungsinfofile, $sendungsalias);
-				# Jörn Droenner 01.01.2014
-				# $sendung =~ s/\'//g;
-				# # print "cd $outdir; git annex add $outdir\n";
-				# $rc = system("cd $outdir; git annex add $outdir");
-				# DEBUG "Abschluss git annex add $outdir  $rc";
-				# # print "cd $outdir; git commit -a -m 'Aufnahme $sendung $datum $id'\n";
-				# $rc = system("cd $outdir; git commit -a -m 'Aufnahme $sendung $datum $id'");
-				# DEBUG "Abschluss git commit $sendung $datum $id:  $rc";
+				
 			}
 		}
 		else
