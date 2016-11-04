@@ -34,8 +34,13 @@ echo "TYPE RADIO" > $LOGFILE
 # put search items in this config file
 for SENDUNG in `cat /config/bbc.txt`
 do
-        echo "/usr/local/bin/bbc/bbc.pl --senke $SENKE --sendung $SENDUNG $LIST" >> $LOGFILE
-        /usr/local/bin/bbc/bbc.pl --nocleanup --senke $SENKE --sendung $SENDUNG $LIST
+        FOUND=`/bin/grep "$SENDUNG" $LIST|cut -d: -f1`
+        for ID in $FOUND
+        do
+                echo "ID: $ID"
+                echo "/usr/local/bin/bbc/bbc.pl --senke $SENKE --sendung $ID $LIST" >> $LOGFILE
+                /usr/local/bin/bbc/bbc.pl --nocleanup --senke $SENKE --sendung $ID $LIST
+        done
 done
 
 # Cleanup
